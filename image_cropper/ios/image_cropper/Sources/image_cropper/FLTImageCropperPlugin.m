@@ -141,6 +141,7 @@
 
     void (^presentCropper)(void) = ^{
       if (embedInNavigationController) {
+        cropViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         UINavigationController *navigationController =
             [[UINavigationController alloc]
                 initWithRootViewController:cropViewController];
@@ -154,6 +155,7 @@
                                          animated:YES
                                        completion:nil];
       } else {
+        cropViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         [capturedFlutterTop presentViewController:cropViewController
                                          animated:YES
                                        completion:nil];
